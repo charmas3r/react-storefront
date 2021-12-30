@@ -48,7 +48,7 @@ const LoginPage: React.VFC = () => {
           <div>
             <form onSubmit={handleLogin}>
               <div>
-                <span className="text-sm text-gray-900">Welcome back</span>
+                <span className="text-sm text-gray-900">Welcome</span>
                 <h1 className="text-2xl font-bold">Login to your account</h1>
               </div>
 
