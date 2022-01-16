@@ -13,13 +13,19 @@ const Home = ({ menuData }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <BaseSeo />
       <div className="py-10">
         <header className="mb-4">
-          <div className="max-w-7xl mx-auto px-8"></div>
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="h-14 bg-gradient-to-r from-cyan-500 to-blue-500 text-center py-4 text-amber-50">
+              Stay tuned... This website is under development!
+            </div>
+
+          </div>
         </header>
         <main>
           <div className="max-w-7xl mx-auto px-8">
-            {menuData?.menu?.items?.map((m) => {
-              if (!!m) return <HomepageBlock key={m?.id} menuItem={m} />;
-            })}
+
+            {/*{menuData?.menu?.items?.map((m) => {*/}
+            {/*  if (!!m) return <HomepageBlock key={m?.id} menuItem={m} />;*/}
+            {/*})}*/}
           </div>
         </main>
       </div>
