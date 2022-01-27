@@ -62,8 +62,7 @@ export const ProductCard = ({product}: ProductCardProps) => {
                     opacity: imageLoading ? 0 : 1
                   }}
                   transition={
-                    ({ height: { delay: 0, duration: 0.4 } },
-                      { opacity: { delay: 0.5, duration: 0.4 } })
+                    ({ opacity: { delay: 0.5, duration: 0.4 } })
                   }
                   onLoad={imageLoaded}
                   width="100%"
