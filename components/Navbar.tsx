@@ -36,7 +36,7 @@ export const Navbar = () => {
   const counter = data?.checkout?.lines?.length || 0;
 
   return (
-    <div className="bg-white shadow-sm">
+    <div className="bg-neutral-content shadow-sm" data-theme="garden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex justify-between items-center">
@@ -54,7 +54,7 @@ export const Navbar = () => {
               <a className="-m-2 p-2 flex items-center" aria-label="Search">
                 <SearchIcon
                   className={
-                    "flex-shrink-0 h-6 w-6 text-gray-400 hover:text-gray-500"
+                    "flex-shrink-0 h-6 w-6 text-primary hover:text-primary-focus"
                   }
                 />
               </a>
@@ -62,7 +62,7 @@ export const Navbar = () => {
             <Link href="/cart">
               <a className="group -m-2 p-2 flex items-center">
                 <ShoppingBagIcon
-                  className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                  className="flex-shrink-0 h-6 w-6 text-primary hover:text-primary-focus"
                   aria-hidden="true"
                 />
                 <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
@@ -74,10 +74,10 @@ export const Navbar = () => {
               <Link href="/account/login">
                 <a className="group -m-2 p-2 flex items-center">
                   <UserCircleIcon
-                    className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                    className="flex-shrink-0 h-6 w-6 text-primary hover:text-primary-focus"
                     aria-hidden="true"
                   />
-                  <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                  <span className="ml-2 text-sm font-medium text-gray-600 hover:text-primary-focus">
                     Log in
                   </span>
                 </a>

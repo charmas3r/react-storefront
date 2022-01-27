@@ -28,6 +28,8 @@ const PagePage = ({
     return null;
   }
 
+  console.log(data);
+
   return (
     <main className="max-w-7xl mx-auto pt-8 px-8">
       {!!page.content && <RichText jsonStringData={page.content} />}

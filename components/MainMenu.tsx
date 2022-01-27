@@ -39,7 +39,7 @@ export const MainMenu = () => {
           !openDropdown && "invisible opacity-0"
         )}
       >
-        <div className="mt-5 mr-2 -ml-2 md:mx-3 z-40 absolute h-screen w-screen lg:max-w-7xl md:h-56 bg-white border border-gray-200 rounded-md shadow-lg outline-none">
+        <div className="mt-5 mr-2 -ml-2 md:mx-3 z-40 absolute h-screen w-screen lg:max-w-7xl md:h-56 bg-gray-100 border border-gray-300 rounded-md shadow-lg outline-none">
           <div className="flex flex-col md:flex-row cursor-default md:divide-x md:divide-gray-200">
             {menu?.map((item) => {
               return (

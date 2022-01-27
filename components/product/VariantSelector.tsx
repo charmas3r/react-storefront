@@ -18,7 +18,7 @@ export const VariantSelector = ({
     return null;
   }
   return (
-    <div className="grid grid-cols-8 gap-2">
+    <div className="grid grid-cols-5 gap-3" data-theme="garden">
       {variants.map((variant) => {
         const isSelected = variant?.id === selectedVariantID;
         return (
@@ -33,12 +33,12 @@ export const VariantSelector = ({
           >
             <a
               className={clsx(
-                "flex justify-center  rounded-md p-3 font-semibold hover:border-blue-400 shadow-md",
-                isSelected && "border-2 border-blue-300 bg-blue-300",
-                !isSelected && "border-2 border-gray-300"
+                "w-55 flex justify-center rounded-md p-3 font-semibold hover:bg-primary-focus shadow-md",
+                isSelected && "border-2 border-primary bg-primary",
+                !isSelected && "border-2 border-primary text-slate-400"
               )}
             >
-              {variant?.name}
+              {variant?.quantityAvailable} in stock
             </a>
           </Link>
         );
