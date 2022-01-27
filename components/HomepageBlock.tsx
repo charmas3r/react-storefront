@@ -31,14 +31,14 @@ export const HomepageBlock = ({ menuItem }: HomepageBlockProps) => {
   }
   return (
     <div className="pb-8">
-      <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 pb-4">
+      <h1 className="text-3xl font-bold tracking-tight pb-4">
         {menuItem.name}
       </h1>
       <ProductCollection filter={filter} allowMore={false} />
       <div className="flex flex-row-reverse p-4">
         <Link href={link}>
           <a>
-            <p>More →</p>
+            <p className="text-green-700">More →</p>
           </a>
         </Link>
       </div>

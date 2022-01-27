@@ -22,7 +22,9 @@ export const RichText = ({ jsonStringData }: RichTextProps) => {
   }
   return (
     <article className="prose lg:prose-s">
-      <Blocks data={data} />
+      <div className="text-gray-800" data-theme="garden">
+        <Blocks data={data} />
+      </div>
     </article>
   );
 };

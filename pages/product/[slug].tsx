@@ -128,6 +128,7 @@ const ProductPage = ({
         className={clsx(
           "grid grid-cols-1 gap-4 max-h-full overflow-auto md:overflow-hidden max-w-7xl mx-auto pt-8 px-8 md:grid-cols-3"
         )}
+        data-theme="garden"
       >
         <div className="col-span-2">
           <ProductGallery product={product} selectedVariant={selectedVariant} />
@@ -154,7 +155,7 @@ const ProductPage = ({
             type="submit"
             disabled={isAddToCartButtonDisabled}
             className={clsx(
-              "max-w-xs w-full bg-blue-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-white hover:bg-blue-600 focus:outline-none",
+              "max-w-xs w-full btn-primary border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-white hover:bg-primary-focus focus:outline-none",
               isAddToCartButtonDisabled && "bg-gray-400 hover:bg-gray-400"
             )}
           >

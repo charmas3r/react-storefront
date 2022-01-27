@@ -1,8 +1,8 @@
-import { useAuth, useAuthState } from "@saleor/sdk";
+import {useAuth, useAuthState} from "@saleor/sdk";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 import React from "react";
-import { useForm } from "react-hook-form";
+import {useForm} from "react-hook-form";
 
 export interface LoginFormData {
   email: string;
@@ -11,12 +11,12 @@ export interface LoginFormData {
 
 const LoginPage: React.VFC = () => {
   const router = useRouter();
-  const { login } = useAuth();
-  const { authenticated } = useAuthState();
+  const {login} = useAuth();
+  const {authenticated} = useAuthState();
   const {
     register: registerForm,
     handleSubmit: handleSubmitForm,
-    formState: { errors: errorsForm },
+    formState: {errors: errorsForm},
     setError: setErrorForm,
     getValues,
   } = useForm<LoginFormData>({});
@@ -24,7 +24,7 @@ const LoginPage: React.VFC = () => {
   const redirectURL = router.query.next?.toString() || "/";
 
   const handleLogin = handleSubmitForm(async (formData: LoginFormData) => {
-    const { data } = await login({
+    const {data} = await login({
       email: formData.email,
       password: formData.password,
     });
@@ -32,7 +32,7 @@ const LoginPage: React.VFC = () => {
     if (data?.tokenCreate?.errors[0]) {
       // Unable to sign in.
       console.log(data?.tokenCreate?.errors);
-      setErrorForm("email", { message: "Invalid credentials" });
+      setErrorForm("email", {message: "Invalid credentials"});
     }
   });
   if (authenticated) {
@@ -42,20 +42,28 @@ const LoginPage: React.VFC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-no-repeat bg-cover bg-center bg-gradient-to-r from-blue-100 to-blue-500">
-      <div className="flex justify-end">
-        <div className="bg-white min-h-screen w-1/2 flex justify-center items-center">
+    <div className="hero min-h-screen bg-base-200" data-theme="garden">
+      <div className="flex-col justify-center hero-content lg:flex-row">
+        <div className="text-center lg:text-left">
+          <h1 className="mb-5 text-5xl font-bold text-gray-800">
+            Hello there
+          </h1>
+          <p className="mb-5">
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In
+            deleniti eaque aut repudiandae et a id nisi.
+          </p>
+        </div>
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5">
           <div>
             <form onSubmit={handleLogin}>
               <div>
-                <span className="text-sm text-gray-900">Welcome</span>
+                <span className="text-sm text-gray-800">Welcome</span>
                 <h1 className="text-2xl font-bold">Login to your account</h1>
               </div>
-
               <div className="my-3">
                 <label className="block text-md mb-2">Email</label>
                 <input
-                  className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none"
+                  className="w-full input input-primary input-bordered text-accent-content"
                   type="email"
                   placeholder="email"
                   {...registerForm("email", {
@@ -66,7 +74,7 @@ const LoginPage: React.VFC = () => {
               <div className="mt-5">
                 <label className="block text-md mb-2">Password</label>
                 <input
-                  className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none"
+                  className="w-full input input-primary input-bordered text-accent-content"
                   type="password"
                   placeholder="password"
                   {...registerForm("password", {
@@ -75,12 +83,13 @@ const LoginPage: React.VFC = () => {
                 />
               </div>
               <div className="flex justify-between">
-                <span className="text-sm text-blue-700 hover:underline cursor-pointer pt-2">
+                <span className="text-sm text-green-700 hover:underline cursor-pointer pt-2">
                   Forgot password?
                 </span>
               </div>
               <div className="">
-                <button className="mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">
+                <button
+                  className="btn btn-primary mt-6">
                   Login now
                 </button>
                 {!!errorsForm.email && (
@@ -94,7 +103,7 @@ const LoginPage: React.VFC = () => {
               {" "}
               Dont have an account?{" "}
               <Link href="/account/register">
-                <a> Register!</a>
+                <a className="text-green-700"> Register!</a>
               </Link>
             </p>
           </div>

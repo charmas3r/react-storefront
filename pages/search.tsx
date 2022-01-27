@@ -19,15 +19,21 @@ const SearchPage = () => {
   );
 
   return (
-    <main className="max-w-7xl mx-auto w-full px-8 mt-5">
-      <p className="font-semibold text-2xl mb-5">Search</p>
-      <input
-        className="md:w-96 mb-10 block border-gray-300 rounded-md shadow-sm sm:text-sm"
-        type="text"
-        value={searchQuery || ""}
-        placeholder={"Search..."}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
+    <main className="max-w-5xl mx-auto w-full px-8 mt-5" data-theme="garden">
+      <div className="form-control mb-10">
+        <label className="label">
+          <h2>Store Search</h2>
+        </label>
+        <div className="flex space-x-2">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchQuery || ""}
+            className="w-9/12 input input-primary input-bordered text-accent-content"
+            onChange={(e) => setSearchQuery(e.target.value)} />
+            <button className="btn btn-primary">Go</button>
+        </div>
+      </div>
       <ProductCollection filter={debouncedFilter} />
     </main>
   );
